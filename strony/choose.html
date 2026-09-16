@@ -10,7 +10,75 @@
     <body>
       <a href="../index.html">Powrót</a>
       <a href="./uklad/index.html">Układ</a>
-      <a href="./tabele.html">Tabele</a>
       <p>Uwaga! Większość tych podstron nie ma linku z powrotem na zajefajnelampy.pl!</p>
+
+      <h3>Tabele</h3>
+        <html>
+            <head>
+                <meta charset="UTF-8">
+                <title>Tabele</title>
+                <style>
+                caption {
+                    color: brown;
+                    border: brown solid 2px;
+                    padding: 2px;
+                }
+                td {
+                    text-align: center;
+                    vertical-align: center;
+                }
+                tr.h td:not([rowspan]):not([colspan]), td.h
+                { background-color: greenyellow; }
+                td[rowspan], td[colspan]
+                { background-color: cornflowerblue; }
+                td[rowspan=2][colspan=2]
+                { border: 2px solid brown; }
+                .axb {
+                    font-size: 10px;
+                    background-color: transparent;
+                    border: 2px solid cornflowerblue;
+                }
+                tr.h .axb { border: greenyellow; }
+                </style>
+            </head>
+            <body>
+                <table>
+                    <caption>Tabela 01</caption>
+                    <tr>
+                        <td class="axb">AxB</td>
+                        <td colspan="5">A</td>
+                        <td class="axb">AxB</td>
+                    </tr>
+                    <tr class="h">
+                        <td rowspan="5">B</td>
+                        <td>00</td> <td>01</td> <td>02</td>
+                        <td>03</td> <td>04</td>
+                        <td rowspan="5">B</td>
+                    </tr>
+                    <tr>
+                        <td class="h">01</td>
+                        <td>1</td> <td>2</td> <td>3</td> <td>4</td>
+                    </tr>
+                    <tr>
+                        <td class="h">02</td>
+                        <td>2</td> <td>4</td> <td>6</td> <td>8</td>
+                    </tr>
+                    <tr>
+                        <td class="h">03</td>
+                        <td>3</td> <td>6</td>
+                        <td rowspan="2" colspan="2">9</td>
+                    </tr>
+                    <tr>
+                        <td class="h">04</td>
+                        <td>4</td> <td>8</td>
+                    </tr>
+                    <tr class="h">
+                        <td class="axb">AxB</td>
+                        <td colspan="5">A</td>
+                        <td class="axb">AxB</td>
+                    </tr>
+                </table>
+            </body>
+        </html>
     </body>
 </html>
