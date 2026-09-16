@@ -1,0 +1,14 @@
+body {
+    min-height: 100vh;
+    background: linear-gradient(45deg, blue, violet);
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 3px;
+}
+
+th {
+    background-color: #330033;
+    color: white;
+}
