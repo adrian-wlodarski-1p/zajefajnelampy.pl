@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="pl">
     <head>
         <meta charset="UTF-8">
         <title>Układ strony</title>
@@ -19,7 +19,7 @@
         </nav>
         <main>
             <aside>
-                <p>Ostatnio dołączyli:</p>
+                <h2>Ostatnio dołączyli:</h2>
                 <figure>
                     <img src="img/u1.png" alt="" />
                     <figcaption>Ariel</figcaption>
@@ -41,8 +41,66 @@
                     <figcaption>Butterfly designer</figcaption>
                 </figure>
             </aside>
-            <div id="forms">
-                <p>Formularz zgłoszeniowy:</p>
+            <div class="mainforms">
+                <h2>Formularz zgłoszeniowy:</h2>
+                <form>
+                    <fieldset class="formgrid">
+                        <legend id="legend1">Green PowerCreate account</legend>
+                        <fieldset id="fieldset2">
+                            <legend>Dane osobowe</legend>
+                            <label for="email">Email:</label>
+                            <input id="email" name="email" type="email" class="wbig">
+                            <label for="nazwisko">Nazwisko:</label>
+                            <input id="nazwisko" name="nazwisko" type="text" class="wbig">
+                            <label for="imie">Imię:</label>
+                            <input id="imie" name="imie" type="text" class="wbig">
+                            <label for="adres">Adres:</label>
+                            <input id="adres" name="adres" type="text" class="wbig">
+                            <label for="miasto">Miasto:</label>
+                            <input id="miasto" name="miasto" type="text" class="wbig">
+                            <label for="kodpoczt">Kod pocztowy:</label>
+                            <input id="kodpoczt" name="kodpoczt" type="text" class="wsmall">
+                            <label for="tel">Telefon kontaktowy:</label>
+                            <input id="tel" name="tel" type="tel" class="wsmall">
+
+                            <h3>Weryfikacja danych na podstawie karty kredytowej</h3>
+                            <div class="formgrid">
+                                <div>
+                                    <label for="card">Rodzaj karty:</label>
+                                    <input id="card" name="card" type="text" class="wmax">
+                                    <label for="cvc">Kod CVC:</label>
+                                    <input id="cvc" name="cvc" type="text" class="wmax">
+                                    <label for="data">Data ważności:</label>
+                                    <input id="data" name="data" type="date" class="wmax">
+                                </div>
+                                <div id="icondiv"><img src="img/gv.png" alt="green energy icon"></div>
+                            </div>
+                        </fieldset>
+                        <fieldset>
+                            <legend>Stanowisko</legend>
+                            <label for="role">Wybierz z listy wolne stanowisko:</label>
+                            <select id="role" name="role" class="wsmall">
+                                <optgroup label="Designers">
+                                    <option value="flora-designer">Flora designer</option>
+                                    <option value="fauna-designer">Fauna designer</option>
+                                    <option value="autumn-designer">Autumn designer</option>
+                                    <option value="doom-designer">Doom designer</option>
+                                </optgroup>
+                                <optgroup label="Terraformers">
+                                    <option value="m-class">M class planet terraformer</option>
+                                    <option value="y-class">Y class planet terraformer</option>
+                                </optgroup>
+                                <optgroup label="Managers">
+                                    <option value="pop-manager">Population manager</option>
+                                    <option value="dream-manager">Dream manager</option>
+                                </optgroup>
+                            </select>
+                            <hr>
+                            <label for="okres">Okres zatrudnienia</label>
+                            
+                        </fieldset>
+                    </fieldset>
+                </form>
             </div>
         </main>
         <footer>
