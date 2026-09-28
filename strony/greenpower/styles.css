@@ -88,7 +88,7 @@ legend {
             black 0% var(--grad-transit),
             var(--sec-color) var(--grad-transit) 100%);
 }
-input, select {
+input:not([type="input"]), select {
     --gradient-span: 20%;
     background: linear-gradient(to right, var(--sec-color) 0%,
                                 white var(--gradient-span) calc(100% - var(--gradient-span)),
@@ -106,6 +106,7 @@ h3 {
     font-weight: bold;
     text-align: center;
 }
+#okres { grid-template-columns: repeat(4, 1fr); }
 
 optgroup, option { background-color: #FFFFAA; }
 option { color: black; }
