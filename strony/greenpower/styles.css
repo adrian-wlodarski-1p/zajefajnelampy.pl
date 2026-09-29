@@ -1,3 +1,5 @@
+/* todo: clean up mess */
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -52,7 +54,7 @@ figure img {
 }
 figcaption { text-align: center; }
 
-fieldset, legend, input, select {
+fieldset, legend, #legendx, input:not([type="radio"]), select {
     margin: var(--form-margin);
     padding: 2px;
     border: 1px solid black;
@@ -68,6 +70,16 @@ fieldset *:not(h3) {
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+#okres {
+	display: flex;
+	justify-content: center;
+}
+input[type="radio"] {
+	width: 1.5em;
+	aspect-ratio: 1 / 1;
+	margin: 4px;
+	accent-color: var(--color);
+}
 #icondiv {
   display: flex;
   align-items: center;
@@ -77,7 +89,7 @@ fieldset *:not(h3) {
     width: 100px;
     aspect-ratio: 1 / 1;
 }
-legend {
+legend, #legendx {
     padding: 2px;
     background: var(--sec-color);
     color: var(--color);
@@ -88,6 +100,18 @@ legend {
             black 0% var(--grad-transit),
             var(--sec-color) var(--grad-transit) 100%);
 }
+#innewar { position: relative; }
+#legendx {
+    --grad-transit: 47%;
+    background: linear-gradient(to left, 
+            black 0% var(--grad-transit),
+            var(--sec-color) var(--grad-transit) 100%);
+	width: 170px;
+	position: absolute;
+	top: -9px;
+	right: 20px;
+}
+#legendx div { margin: 0 auto; }
 input:not([type="input"]), select {
     --gradient-span: 20%;
     background: linear-gradient(to right, var(--sec-color) 0%,
@@ -106,7 +130,12 @@ h3 {
     font-weight: bold;
     text-align: center;
 }
-#okres { grid-template-columns: repeat(4, 1fr); }
+label:has(input) { padding-top: 0; }
+label input { display: inline-block; }
+input[type="range"] {
+	background: white;
+	accent-color: var(--color);
+}
 
 optgroup, option { background-color: #FFFFAA; }
 option { color: black; }
