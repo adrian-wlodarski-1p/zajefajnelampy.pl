@@ -97,18 +97,24 @@
                             </select>
                             <hr>
                             <label for="okres">Okres zatrudnienia</label>
-							<div id="okres" class="formgrid">
-								<label><input name="okres" type="radio" value="1y">1 rok</label>
-								<label><input name="okres" type="radio" value="10y">10 lat</label>
-								<label><input name="okres" type="radio" value="100y">100 lat</label>
-								<label><input name="okres" type="radio" value="forever">1 for ever</label>
+							<div id="okres">
+								<div><input id="y1" name="okres" type="radio" value="1y"><label for="y1">1 rok</label></div>
+								<div><input id="y10" name="okres" type="radio" value="10y"><label for="y10">10 lat</label></div>
+								<div><input id="y100" name="okres" type="radio" value="100y"><label for="y100">100 lat</label></div>
+								<div><input id="yinf" name="okres" type="radio" value="forever"><label for="yinf">for ever</label></div>
 							</div>
 							<fieldset id="innewar">
 							    <legend>Określ inne warunki pracy</legend>
 								<label for="wynagrodzenie">Wynagrodzenie:</label>
 								<div id="wynagrodzenie" class="formgrid">
-									<label>Min: <input name="wynagrodzenie-min" type="range" min="0" max="5" value="1"></label>
-									<label>Max: <input name="wynagrodzenie-max" type="range" min="0" max="5" value="1"></label>
+									<label>Min: <div>
+                                        <input name="wynagrodzenie-min" type="range" min="0" max="5" value="1">
+                                        <div class="rangedots"><span>&#716;</span><span>&#716;</span><span>&#716;</span><span>&#716;</span><span>&#716;</span></div>
+                                    </div></label>
+									<label>Max: <div>
+                                        <input name="wynagrodzenie-max" type="range" min="0" max="5" value="1">
+                                        <div class="rangedots"><span>&#716;</span><span>&#716;</span><span>&#716;</span><span>&#716;</span><span>&#716;</span></div>
+                                    </div></label>
 								</div>
 								<div id="legendx" class="formgrid">
 								    <div>0 / 255</div>
