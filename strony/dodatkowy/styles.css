@@ -3,11 +3,12 @@ body {
     background: linear-gradient(45deg, blue, violet);
 }
 
-table {
+#wrapper {
     margin: 0 auto;
-    border-collapse: collapse;
-    border-radius: 3px;
+    border-radius: 20px;
 }
+
+table { border-collapse: collapse; }
 
 td, th {
     padding: 3px 50px;
@@ -19,6 +20,8 @@ td, th {
 tr { background-color: white; }
 
 tr:nth-child(even) { background-color: #f2f2f2; }
+
+tr:hover { background-color: #FF9999; }
 
 th {
     background-color: #291129;
