@@ -1,4 +1,3 @@
-
 let table = document.getElementById("orders");
 document.getElementById("wrapper").style.width = table.offsetWidth + "px";
 
@@ -9,7 +8,9 @@ if(typeof(Storage) !== "undefined") {
 	let orders = sessionStorage.getItem("orders");
 
 	if(orders !== null) {
-		table.innerHTML = orders;
+		table.replaceChildren(...[
+		   orders.map(node => node.cloneNode(true))
+		]);
 	}
 }
 
@@ -68,10 +69,10 @@ function updateSum() {
 	for(let i = 0; i < bills.length; i++) {
 		sum += Number(bills[i].textContent.slice(0, -1));
 	}
-	sum_td.innerHTML = sum+"$";
+	sum_td.textContent = sum+"$";
 	
 	if(typeof(Storage) !== "undefined") {
-		sessionStorage.orders = table.innerHTML;
+		sessionStorage.orders = ...table.childNodes;
 		sessionStorage.sum = sum;
 	}
 }
