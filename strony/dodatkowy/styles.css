@@ -79,5 +79,5 @@ div:has(> [type="button"]) {
 	z-index: 1;
 }
 
-#thx { display: none; }
-#thx.visible { display: block; }
+#thanks { display: none; }
+#thanks.visible { display: block; }
