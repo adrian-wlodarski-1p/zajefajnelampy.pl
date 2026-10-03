@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Tabela</title>
+        <link rel="stylesheet" href="styles.css">
+		<script>
+		function back() {
+		    window.location.href = "index.html";
+		}
+		
+		function pay() {
+		    if(document.forms[0]["method"].value === "") {
+			    alert("Select payment method.")
+				return false;
+			}
+			let money = document.forms[0]["money"];
+			if(money.value < sessionStorage.sum) {
+			    alert("Not enough money.");
+				return false;
+			}
+			money.removeAttribute("value");
+		}
+		</script>
+    </head>
+    <body>
+	    <form onsubmit="return pay();">
+			<p id="bill">Bill: </p>
+			<script>
+			if(typeof(Storage) !== "undefined") {
+			    document.getElementById("bill").textContent += sessionStorage.sum + "$";
+			}
+			</script>
+			
+			<label>First name: <input name="first" minlength="1"></label>
+			<label>Last name: <input name="last" minlength="1"></label>
+			<label>Payment method: <select name="method">
+			    <option value="" selected>--select--</option>
+				<option value="visa">Visa</option>
+				<option value="paypal">PayPal</option>
+				<option value="mastercard">Mastercard</option>
+				<option value="blik">Blik (only in Poland)</option>
+			</select></label>
+			<label>Billing address: <input id="dis" disabled value="disabled due to security reasons"></label>
+			<input type="hidden" name="billing" value="">
+			<label>Your money (in $): <input name="money" type="number"></label>
+			<label>Notes: <textarea name="notes"></textarea></label>
+			<input type="hidden" name="thx" value="">
+			<div>
+			    <input type="button" onclick="back();" value="Go back">
+				<input type="submit" value="Continue & Pay">
+				<br>
+				<p id="thx">Thank you for buying our products!</p>
+			</div>
+			<script>
+			if (new URL(window.location.href).searchParams.has("thx")) {
+				document.getElementById("thx").classList.add("visible");
+			}
+			</script>
+		</form>
+    </body>
+</html>
