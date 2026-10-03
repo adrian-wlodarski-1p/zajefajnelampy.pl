@@ -15,11 +15,25 @@
 		<p>Uwaga! Większość tych podstron nie ma linku z powrotem na zajefajnelampy.pl!</p>
 		
 		<h3>Tabele</h3>
-		<iframe src="./tabele1.html"></iframe> <!-- embedded project -->
-		<script>
-		  document.getElementsByTagName("iframe")[0].contentDocument
-		    .querySelectorAll('head link, head style')
-		    .forEach(el => el.remove());
-		</script>
+		<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Choose</title>
+        <style>
+          a { display: block; }
+		  iframe { width: 100%; height: 200px; border: none; overflow: hidden; }
+        </style>
+		<script>function adjust(o) { o.style.height=o.contentWindow.document.body.scrollHeight+"px"; }</script>
+    </head>
+    <body>
+	    <a href="../index.html">Powrót</a>
+		<a href="./uklad/index.html">Układ</a>
+		<a href="./dodatkowy/index.html">Dodatkowy</a>
+		<a href="./greenpower/index.html">Greenpower</a>
+		<p>Uwaga! Większość tych podstron nie ma linku z powrotem na zajefajnelampy.pl!</p>
+		
+		<h3>Tabele</h3>
+		<iframe src="./tabele1.html" onload="adjust(this);"></iframe> <!-- embedded project -->
     </body>
 </html>
