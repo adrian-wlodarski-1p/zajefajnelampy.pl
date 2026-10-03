@@ -15,6 +15,11 @@
 		<p>Uwaga! Większość tych podstron nie ma linku z powrotem na zajefajnelampy.pl!</p>
 		
 		<h3>Tabele</h3>
-		<iframe src="./tabele1.html"> <!-- embedded project -->
+		<iframe src="./tabele1.html"></iframe> <!-- embedded project -->
+		<script>
+		  document.getElementsByTagName("iframe")[0].contentDocument
+		    .querySelectorAll('head link, head style')
+		    .forEach(el => el.remove());
+		</script>
     </body>
 </html>
