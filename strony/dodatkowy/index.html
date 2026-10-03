@@ -8,7 +8,7 @@
     </head>
     <body>
         <div id="wrapper">
-            <table>
+            <table id="orders">
                 <tr>
                     <th>Date</th>
                     <th>Order ID</th>
@@ -18,6 +18,13 @@
                     <th>Total</th>
                 </tr>
             </table>
+			<div>
+				<button onclick="addRow();">Add order</button>
+				<button onclick="removeRow();">Remove order</button>
+				<button onclick="cancelAll();">Cancel all</button>
+				<button onclick="checkout();">Checkout</button>
+				<table id="sum"> <tr> <td></td> </tr> </table>
+			</div>
         </div>
     </body>
 </html>
