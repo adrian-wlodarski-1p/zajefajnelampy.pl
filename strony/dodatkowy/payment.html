@@ -57,9 +57,9 @@
 				<p id="thanks">Thank you for buying our products!</p>
 			</div>
 			<script>
-			if (new URL(window.location.href).searchParams.has("thx") &&
+			if (new URL(window.location.href).searchParams.has("thanks") &&
 			    (typeof(Storage) !== "undefined" ? sessionStorage.valid_form : true)) {
-				document.getElementById("thx").classList.add("visible");
+				document.getElementById("thanks").classList.add("visible");
 			}
 			</script>
 		</form>
