@@ -5,29 +5,33 @@
         <title>Tabela</title>
         <link rel="stylesheet" href="styles.css">
 		<script>
+		var stor_pres = typeof("Storage") !== "undefined";
+		
 		function back() {
 		    window.location.href = "index.html";
 		}
 		
 		function pay() {
+		    if(stor_pres) sessionStorage.valid_form = false;
 		    if(document.forms[0]["method"].value === "") {
 			    alert("Select payment method.")
 				return false;
 			}
 			let money = document.forms[0]["money"];
-			if(money.value < sessionStorage.sum) {
+			if(Number(money.value) < Number(sessionStorage.sum)) {
 			    alert("Not enough money.");
 				return false;
 			}
 			money.removeAttribute("value");
+			if(stor_pres) sessionStorage.valid_form = true;
 		}
 		</script>
     </head>
     <body>
 	    <form onsubmit="return pay();">
-			<p id="bill">Bill: </p>
+			<p id="bill" onload="if(stor_pres) this.textContent += sessionStorage.sum;">Bill: </p>
 			<script>
-			if(typeof(Storage) !== "undefined") {
+			if(stor_pres) {
 			    document.getElementById("bill").textContent += sessionStorage.sum + "$";
 			}
 			</script>
@@ -45,15 +49,16 @@
 			<input type="hidden" name="billing" value="">
 			<label>Your money (in $): <input name="money" type="number"></label>
 			<label>Notes: <textarea name="notes"></textarea></label>
-			<input type="hidden" name="thx" value="">
+			<input type="hidden" name="thanks" value="">
 			<div>
 			    <input type="button" onclick="back();" value="Go back">
 				<input type="submit" value="Continue & Pay">
 				<br>
-				<p id="thx">Thank you for buying our products!</p>
+				<p id="thanks">Thank you for buying our products!</p>
 			</div>
 			<script>
-			if (new URL(window.location.href).searchParams.has("thx")) {
+			if (new URL(window.location.href).searchParams.has("thx") &&
+			    (typeof(Storage) !== "undefined" ? sessionStorage.valid_form : true)) {
 				document.getElementById("thx").classList.add("visible");
 			}
 			</script>
