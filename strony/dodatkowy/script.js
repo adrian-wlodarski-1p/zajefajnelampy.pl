@@ -1,3 +1,4 @@
+
 let table = document.getElementById("orders");
 document.getElementById("wrapper").style.width = table.offsetWidth + "px";
 
