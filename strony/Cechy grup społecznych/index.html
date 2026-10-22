@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pl-pl">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Cechy grup społecznych</title>
+		<style>
+		* { box-sizing: border-box; }
+		body {
+			display: flex;
+			margin: 0;
+			min-height: 100vh;
+			
+			justify-content: center;
+			align-items: center;
+			
+			color: white;
+			background: linear-gradient(135deg, lime 0%, blueviolet 70%, rebeccapurple);
+		}
+		
+		main {
+			max-width: 50vw;
+		}
+		img { margin: 10px; }
+		</style>
+	</head>
+	<body>
+		<main>
+			<h1>Test</h1>
+			<h2 style="display: none">Heading</h2>
+			<h3 id="a">Lorem ipsum dolor sit, amet.</h3>
+			<h3 id="b">Second one.</h3>
+			<h3 id="c">Turn on scripts please.</h3>
+		</main>
+		<div id="img"></div>
+		<script>
+		h1s = [
+			"Cechy grup społecznych​",
+			"",
+			"Więź/Trwałość​",
+			"Wewnętrzna struktura​",
+			"Nastawienie na wspólne cele​",
+			"Liczebność​",
+			"Poczucie przynależności​",
+			"Dziękuję za uwagę."
+		];
+		h3s = [
+			"Adrian Włodarski 2P​",
+			'Grupy społeczne, nieważne jak bardzo się różnią, mają różne wspólne cechy.',
+			'Żeby grupa społeczna mogła współpracować w drodze do swoich celów, członkowie grupy muszą mieć lub nawiązać porozumienie.​',
+			'Panuje w grupie chaos, jeśli nikt nie ma przydzielonej roli i każdy \
+próbuje robić wszystko. Każda grupa społeczna potrzebuje \
+organizacji. Niektóre mają nawet lidera lub elitę.​',
+			'Zadajmy sobie pytanie: po co w ogóle powstają grupy społeczne? Ktoś mógłby powiedzieć, że np. dla wsparcia emocjonalnego. Lecz samo ono jest niewystarczające. Grupa społeczna pracuje dla wspólnych celów.​',
+			"Jeśli jest to jeden człowiek, to o czym w ogóle mówicie?​",
+			"Co prawda niesamowite rzeczy potrafi zrobić jeden człowiek, lecz większość ludzi nie jest jest protagonistą Wolfenstein 3D, potrzebuje oparcia w większej grupie osobników - grupie społecznej.​",
+			""
+		];
+		h4s = [
+			"",
+			"(Ta prezentacja jest oparta częściowo na podręczniku, a częściowo na Cechy grupy słonecznej - eszkola.pl.)",
+			'W podręczniku nazywa się to "Trwałość", lecz grupa społeczna nie musi istnieć długo, jeśli cel jest niewielki/szybki lub jej członkowie są już podzbiorem innej grupy społecznej.',
+			"",
+			"",
+			"Jeśli to są dwoje ludzi, to to jest para.​",
+			"Potrzeba przynależności to potężna siła, która bardzo łatwo zbiera ludzi, bądź ze sobą, bądź wokół potężniejszego osobnika. Nie jest ona potrzebna do stworzenia grupy społecznej (wystarczy wspólny cel), lecz z czasem każda taka grupa wykształca takie spoiwo.​",
+			""
+		];
+		h5s = ["","","","","",
+			"Więc co najmniej trzy osoby są potrzebne do stworzenia grupy społecznej.​",
+		"",""];
+		imgs = [null,
+			"przynaleznosc.png",
+			"glue.png",
+			"hierarchia.jpg",
+			"cel.png",
+			"crowd.jpg",
+			"wiez-i-trwalosc.jpg",
+			"thumbs-up.png"
+		];
+		i = 0;
+		
+		function update() {
+			let $ = x => document.querySelector(x);
+			$("h1").textContent = h1s[i];
+			$("#a").textContent = h3s[i];
+			$("#b").textContent = h4s[i];
+			$("#c").textContent = h5s[i];
+			$("#img").innerHTML = (
+				imgs[i] === null ? "" :
+				'<img src="' + imgs[i] + '" alt="" />'
+			);
+			$("main").style.maxWidth =
+				imgs[i] === null ? "50vw" : "35vw";
+			$("body").style.flexDirection = 
+				i == imgs.length-1 ? "column" : "row";
+		}
+		
+		update()
+		
+		document.addEventListener("keydown", function (e) {
+			if(e.key === "ArrowLeft") {
+				if(i != 0) i -= 1;
+			} else if(e.key === "ArrowRight") {
+				if(i != h1s.length - 1) i += 1;
+			} else {
+			    return;
+			}
+			update();
+		});
+		</script>
+	</body>
+</html>
