@@ -8,7 +8,7 @@
 }
 
 header, nav { display: flex; }
-header *, nav p {
+header *, nav p, footer {
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -54,8 +54,8 @@ header, header div, nav, #articles, article, section, aside, footer, nav a {
 
 article { text-align: center; }
 
+section, footer { padding: 5px 0; }
 section {
-	padding: 5px 0;
 	color: white;
 	background: gray;
 }
