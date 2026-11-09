@@ -1,43 +1,74 @@
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 0;
+	padding: 0;
 }
 :root {
-    --margin: 10px;
-    --padding: 8px;
-    --box-size: 100px;
-    --text-height: calc(1rem * 1.42 + var(--padding) + 5px);
+	--box-size: 80px;
 }
 
-.box { float: right; }
-.l { float: left; }
-.boo { font-size: calc(var(--box-size) / 1.42); }
-header .box {
-    width: var(--box-size);
-    height: var(--box-size);
+header, nav { display: flex; }
+header *, nav p {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
-nav .box { aspect-ratio: 1 / 1; }
-p, header .box { display: inline-block; }
-header p { line-height: calc(var(--box-size) + 10px) ;}
-header .box { line-height: calc(var(--box-size) - 20px); }
-nav p { line-height: calc(1rem + 2 * var(--margin) + 2 * var(--padding) + 5px); }
+header p, nav p { flex: 1000; }
+header div {
+	width: var(--box-size);
+	height: var(--box-size);
+	flex-shrink: 0;
+}
+.boo { font-size: calc(var(--box-size) / 25px * 1rem); }
 
-body, .flex { display: grid; }
-nav, .flex { grid-template-columns: auto auto; }
+nav ul {
+	display: inline-flex;
+}
+nav a {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	aspect-ratio: 1 / 1;
+	
+	color: inherit;
+	text-decoration: none;
+}
+nav>:not(ul) {
+	flex: 1000;
+}
 
-header, nav, .r, .box, .pannel,
-.pannel div, article, section, footer {
-    margin: var(--margin);
-    border: 1px dashed black;
-    padding: var(--padding);
-    background-color: lightgrey;
-    text-align: center;
+main {
+	display: grid;
+	grid-template-columns: 30% 70%;
+	margin: 2px;
 }
-.pannel div {
-    margin: 0;
-    height: 100%;
-    border-radius: 50%;
-    line-height: calc(2 * var(--padding) + 2 * var(--margin) + 6 * var(--text-height));
+
+header, header div, nav, #articles, article, section, aside, footer, nav a {
+	margin: 2px;
+	border: 1px solid black;
+	padding: 2px;
+	background: darkgray;
 }
-section { background-color: darkgrey; }
+#articles, aside { margin: 0; }
+#articles { margin-right: 2px; }
+
+article { text-align: center; }
+
+section {
+	padding: 5px 0;
+	color: white;
+	background: gray;
+}
+
+aside {
+	border: 3px double;
+}
+aside div {	
+	height: 100%;
+	border: 1px dashed black;
+	border-radius: 100%;
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
